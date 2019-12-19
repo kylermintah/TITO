@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FriendsFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <EditText
+        android:id="@+id/searchBar"
+        android:maxLines="1"
+        android:maxLength="20"
+        android:paddingBottom="0dp"
+        android:layout_marginTop="30dp"
+        android:layout_width="300dp"
+        android:layout_height="40dp" android:paddingStart="40dp"
+        android:background="@drawable/search_layout"
+        android:hint="Search Users"
+        android:textColorHint="#B9CAEF"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/titoBlue"
+        android:layout_centerHorizontal="true">
+    </EditText>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="-33dp"
+        android:layout_marginTop="37dp"
+        android:layout_toLeftOf="@id/searchBar"
+        android:src="@drawable/ic_searchicon" />
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_marginTop="10dp"
+        android:textSize="15sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/titoBlue"
+        android:fontFamily="sans-serif"
+        android:text="@string/your_friends"
+        android:paddingVertical="5dp"
+        android:layout_below="@id/searchBar"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/heading"
+        android:layout_above="@id/invite"
+        />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="100dp"
+        android:layout_height="2dp"
+        android:background="@drawable/circle_button"
+        android:backgroundTint="@color/titoBlue"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/heading"/>
+
+    <TextView
+        android:id="@+id/invite"
+        android:layout_marginTop="20dp"
+        android:textSize="15sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/titoBlue"
+        android:fontFamily="sans-serif"
+        android:text="+ Invite Friends"
+        android:paddingVertical="10dp"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ControlFragment">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Not connected to TITO device. Connect Now"
+        android:layout_above="@id/signUpButton"
+        android:textColor="@color/titoBlue"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:paddingVertical="5dp" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/signUpButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/confirmPasswordTextBoxLayout"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="75dp"
+        android:backgroundTint="@color/titoBlue"
+        android:contentDescription="@string/contentDescLogIn"
+        android:fontFamily="sans-serif"
+        android:text="Connect"
+        android:textColor="@color/white"
+        android:textSize="@dimen/default_text"
+        app:cornerRadius="50dp" />
+</RelativeLayout>

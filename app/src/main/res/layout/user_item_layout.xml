@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:id="@+id/userProfileCard"
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profilePhotoSearch"
+        android:layout_width="76dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="40dp"
+        android:src="@color/titoBlue"
+        />
+    <TextView
+        android:id="@+id/itemUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/profilePhotoSearch"
+        android:text="user"
+        android:textSize="32sp"
+        android:layout_marginTop="30dp"
+        android:padding="10dp"
+        android:layout_marginStart="20dp"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/titoBlue"
+        />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/followButton"
+            android:background="@drawable/circle_button"
+            app:cornerRadius = "80dp"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="70dp"
+            android:text="+"
+            android:fontFamily="sans-serif-black"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:contentDescription="@string/contentDescLogIn" />
+    </RelativeLayout>
+</RelativeLayout>

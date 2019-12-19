@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecordActivity">
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:tint="@color/titoBlue"
+        android:background="@color/defaultBackground"
+        android:src="@drawable/ic_back_button"
+        android:padding="20dp"
+        />
+    <TextView
+        android:id="@+id/record_heading"
+        android:layout_below="@id/backButton"
+        android:layout_width="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif"
+        android:text="Press and hold the button to record and say the following phrase aloud:"
+        android:textSize="20sp"
+        />
+    <TextView
+        android:id="@+id/phrase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/record_heading"
+        android:textColor="@color/titoBlue"
+        android:layout_centerHorizontal="true"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="50dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="'The Quick Brown Fox Jumps Over The Lazy Dog'"
+        android:textSize="20sp"
+        />
+    <ImageButton
+        android:id="@+id/recorder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/phrase"
+        android:src="@drawable/ic_recordicon"
+        android:layout_centerHorizontal="true"
+        android:background="@color/defaultBackground"/>
+
+</RelativeLayout>

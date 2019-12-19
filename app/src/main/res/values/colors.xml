@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="titoBlue">#82C0FF</color>
+    <color name="titoLightBlue">#B9E4FF</color>
+    <color name="white">#FFFF</color>
+    <color name="defaultBackground">#FAFAFA</color>
+    <color name="titoDarkBlue">#2471C6</color>
+</resources>

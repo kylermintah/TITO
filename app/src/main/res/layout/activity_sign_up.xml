@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/AppTheme.NoActionBar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="56dp"
+        android:contentDescription="@string/contentDescLogo"
+        android:src="@drawable/ic_tito_logo_no_text_small" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailTextBoxLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="70dp"
+        android:backgroundTint="@color/titoBlue"
+        android:fontFamily="sans-serif"
+        android:hint="@string/enter_email_address"
+        android:textColor="@color/titoBlue"
+        android:textColorHint="@color/titoLightBlue">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailTextBox"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/titoBlue"
+            android:textColor="@color/titoBlue"
+            android:textColorHint="@color/titoLightBlue"
+            android:inputType="textEmailAddress"
+            android:textSize="@dimen/default_text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/usernameTextBoxLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emailTextBoxLayout"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="@color/titoBlue"
+        android:textColor="@color/titoBlue"
+        android:textColorHint="@color/titoLightBlue">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/usernameTextBox"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:backgroundTint="@color/titoBlue"
+            android:fontFamily="sans-serif"
+            android:hint="@string/choose_a_username"
+            android:inputType="text"
+            android:textColor="@color/titoBlue"
+            android:textColorHint="@color/titoLightBlue"
+            android:textSize="@dimen/default_text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordTextBoxLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/usernameTextBoxLayout"
+        android:maxLines="1"
+        android:maxLength="20"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="@color/titoBlue"
+        android:fontFamily="sans-serif"
+        android:hint="@string/choose_a_password"
+        android:textColor="@color/titoBlue"
+        android:textColorHint="@color/titoLightBlue">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordTextBox"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/titoBlue"
+            android:textColor="@color/titoBlue"
+            android:textColorHint="@color/titoLightBlue"
+            android:inputType="textPassword"
+            android:textSize="@dimen/default_text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/confirmPasswordTextBoxLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/passwordTextBoxLayout"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="@color/titoBlue"
+        android:textColor="@color/titoBlue"
+        android:textColorHint="@color/titoLightBlue">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/confirmPasswordTextBox"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:backgroundTint="@color/titoBlue"
+            android:fontFamily="sans-serif"
+            android:hint="@string/confirm_password"
+            android:inputType="textPassword"
+            android:textColor="@color/titoBlue"
+            android:textColorHint="@color/titoLightBlue"
+            android:textSize="@dimen/default_text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/signUpButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/confirmPasswordTextBoxLayout"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="75dp"
+        android:background="@drawable/circle_button"
+        android:contentDescription="@string/contentDescLogIn"
+        android:fontFamily="sans-serif"
+        android:text="@string/sign_up"
+        android:textColor="@color/white"
+        android:textSize="@dimen/default_text"
+        app:cornerRadius="50dp" />
+</RelativeLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".LogInActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="120dp"
+        android:src="@drawable/ic_logo"
+        android:contentDescription="@string/contentDescLogo"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/usernameTextBoxLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_marginTop="70dp"
+        android:layout_centerInParent="true"
+        android:textColor="@color/titoBlue"
+        android:textColorHint="@color/titoLightBlue"
+        android:backgroundTint="@color/titoBlue"
+        android:fontFamily="sans-serif"
+        android:hint="@string/username" >
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/usernameTextBox"
+        android:maxLines="1"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/titoBlue"
+        android:textColorHint="@color/titoLightBlue"
+        android:backgroundTint="@color/titoBlue"
+        android:textSize="@dimen/default_text"
+       />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordTextBoxLayout"
+        android:layout_below="@id/usernameTextBoxLayout"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/titoBlue"
+        android:textColorHint="@color/titoLightBlue"
+        android:backgroundTint="@color/titoBlue">
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/passwordTextBox"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/titoBlue"
+        android:textColorHint="@color/titoLightBlue"
+        android:backgroundTint="@color/titoBlue"
+        android:fontFamily="sans-serif"
+        android:layout_centerInParent="true"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:textSize="@dimen/default_text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/logInButton"
+        android:background="@drawable/circle_button"
+        app:cornerRadius = "50dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/passwordTextBoxLayout"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="50dp"
+        android:text="@string/log_in"
+        android:fontFamily="sans-serif"
+        android:textSize="@dimen/default_text"
+        android:textColor="@color/white"
+        android:contentDescription="@string/contentDescLogIn" />
+
+    <Button
+        android:id="@+id/signUpButton"
+        android:layout_width="413dp"
+        android:layout_height="70dp"
+        app:cornerRadius = "0dp"
+        android:background="@drawable/search_layout"
+        android:text="@string/sign_up"
+        android:fontFamily="sans-serif"
+        android:textSize="@dimen/default_text"
+        android:textColor="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-8dp"
+        android:contentDescription="@string/contentDescSignUp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/titoBlue"
+        android:layout_centerInParent="true"
+        android:layout_above="@id/signUpButton"
+        android:layout_marginBottom="20dp"
+        android:text="@string/noAccount"/>
+
+</RelativeLayout>
