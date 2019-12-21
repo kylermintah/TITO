@@ -1,10 +1,14 @@
-# TITO
+![image](docs/titologothick.png)
+
 ## Headset Device Companion App
+
 ----------------------------------------------------------------------------------------------------------------------------------------
 
 This project is maintained by the [2019 ESE Senior Design Team 8](https://devpost.com/software/tune-in-tune-out)
 
 **Tune In, Tune Out** University of Pennsylvania .
+
+
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 
