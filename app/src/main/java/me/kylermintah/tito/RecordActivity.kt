@@ -36,35 +36,28 @@ class RecordActivity : AppCompatActivity() {
         backButton.setOnClickListener {
             onBackPressed()
         }
-        recorder.setOnTouchListener(object : View.OnTouchListener {
-            override fun onTouch(v: View?, event: MotionEvent?): Boolean {
-                when (event?.action) {
-                    MotionEvent.ACTION_DOWN -> {
+        recorder.setOnTouchListener { v, event ->
+            when (event?.action) {
+                MotionEvent.ACTION_DOWN -> {
 
-                            recorder.setColorFilter(
-                                ContextCompat.getColor(
-                                    context,
-                                    R.color.colorAccent
-                                ), android.graphics.PorterDuff.Mode.MULTIPLY
-                            )
-                            startRecording()
-
+                    recorder.setColorFilter(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.colorAccent
+                        ), android.graphics.PorterDuff.Mode.MULTIPLY
+                    )
+                    startRecording()
                 }
-                    MotionEvent.ACTION_UP -> {
-                        recorder.setColorFilter(null); stopRecording()
-                    }
-
-
+                MotionEvent.ACTION_UP -> {
+                    recorder.setColorFilter(null); stopRecording()
                 }
-
-                return v?.onTouchEvent(event) ?: true
             }
-        })
-
+            v?.onTouchEvent(event) ?: true
+        }
         output = Environment.getExternalStorageDirectory().absolutePath + "/titorecording.mp3"
         mediaRecorder = MediaRecorder()
         mediaRecorder?.setAudioSource(MediaRecorder.AudioSource.MIC)
-        mediaRecorder?.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4)
+        mediaRecorder?.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT)
         mediaRecorder?.setAudioEncoder(MediaRecorder.AudioEncoder.AAC)
         mediaRecorder?.setOutputFile(output)
     }
@@ -98,7 +91,6 @@ class RecordActivity : AppCompatActivity() {
                             null,
                             audioPath
                         )
-
                     }
                     uiThread {
                         Toast.makeText(

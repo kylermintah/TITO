@@ -50,9 +50,9 @@ class ProfileFragment : Fragment() {
             FirestoreUtil.getCurrentUser { user ->
                 if (!pictureJustChanged && user.profilePicturePath != null && user.profilePicturePath!!.isNotEmpty()) {
                     Glide.with(this)
-                        .load(StorageUtil.pathToImageReference(user.profilePicturePath!!))
-                        .placeholder(R.color.titoBlue)
-                        .into(profile_image)
+                    .load(StorageUtil.pathToImageReference(user.profilePicturePath!!))
+                    .placeholder(R.color.titoBlue)
+                    .into(profile_image)
                 }
             }
             changeProfilePhotoButton.setOnClickListener {
@@ -73,7 +73,6 @@ class ProfileFragment : Fragment() {
         }
         return view
     }
-
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         val selectedImagePath: Uri?
@@ -106,9 +105,7 @@ class ProfileFragment : Fragment() {
                             null
                         )
                         pictureJustChanged = false
-
                     }
-
                 }
             }
         } else if (requestCode == IMAGE_CAPTURE_CODE) {
@@ -121,7 +118,6 @@ class ProfileFragment : Fragment() {
             val selectedImageBmp: Bitmap = ImageDecoder.decodeBitmap(source)
 //            val selectedImageBmp: Bitmap =
 //                BitmapFactory.decodeFile(view!!.context.getFileStreamPath(camera_image_uri.toString()).toString())
-
             val outputStream = ByteArrayOutputStream()
             selectedImageBmp.compress(Bitmap.CompressFormat.JPEG, 90, outputStream)
             selectedImageBytes = outputStream.toByteArray()
@@ -146,12 +142,10 @@ class ProfileFragment : Fragment() {
 
                 }
             }
-
         } else {
             selectedImagePath = Uri.parse("")
         }
-//            val selectedImageBmp = MediaStore.Images.Media.getBitmap(activity?.contentResolver, selectedImagePath)
-
+//      val selectedImageBmp = MediaStore.Images.Media.getBitmap(activity?.contentResolver, selectedImagePath)
     }
 
     override fun onStart() {
