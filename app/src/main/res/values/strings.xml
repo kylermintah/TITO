@@ -29,4 +29,6 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="your_friends">Your Friends</string>
+    <string name="connect_to_tito_device">Connect to TITO Device</string>
+    <string name="not_connected_to_tito_device_connect_now">Not connected to TITO device. Connect Now</string>
 </resources>
