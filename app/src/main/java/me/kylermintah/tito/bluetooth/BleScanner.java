@@ -63,10 +63,10 @@ public class BleScanner {
         this.scan_results_consumer = scan_results_consumer;
         Log.d(Constants.TAG, "Scanning");
         List<ScanFilter> filters;
-        filters = new ArrayList<ScanFilter>();
+        filters = new ArrayList<>();
 //        SCAN FILTER(S)
-        ScanFilter filter = new ScanFilter.Builder().setDeviceName("LE-Obsidian").build();
-        filters.add(filter);
+//            ScanFilter filter = new ScanFilter.Builder().setDeviceAddress("DC:A6:32:2B:C8:3D").build();
+//            filters.add(filter);
 //        ScanFilter filter2 = new ScanFilter.Builder().setDeviceName("TITO").build();
 //        filters.add(filter2);
         ScanSettings settings = new ScanSettings.Builder().setScanMode(ScanSettings.SCAN_MODE_LOW_LATENCY).build();

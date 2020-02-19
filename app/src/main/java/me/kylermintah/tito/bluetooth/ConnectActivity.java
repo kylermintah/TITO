@@ -263,7 +263,4 @@ public class ConnectActivity extends AppCompatActivity implements ScanResultsCon
         }
     }
 
-
-
-
 }
