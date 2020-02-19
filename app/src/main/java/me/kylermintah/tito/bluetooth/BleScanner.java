@@ -64,6 +64,11 @@ public class BleScanner {
         Log.d(Constants.TAG, "Scanning");
         List<ScanFilter> filters;
         filters = new ArrayList<ScanFilter>();
+//        SCAN FILTER(S)
+        ScanFilter filter = new ScanFilter.Builder().setDeviceName("LE-Obsidian").build();
+        filters.add(filter);
+//        ScanFilter filter2 = new ScanFilter.Builder().setDeviceName("TITO").build();
+//        filters.add(filter2);
         ScanSettings settings = new ScanSettings.Builder().setScanMode(ScanSettings.SCAN_MODE_LOW_LATENCY).build();
         setScanning(true);
         scanner.startScan(filters, settings, scan_callback);

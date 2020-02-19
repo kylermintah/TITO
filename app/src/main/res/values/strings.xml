@@ -25,6 +25,7 @@
     <string name="choose_a_username">choose a username</string>
     <string name="choose_a_password">choose a password</string>
     <string name="confirm_password">confirm password</string>
+    <string name="screen_title_main">Device List</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
