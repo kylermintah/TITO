@@ -29,7 +29,9 @@ public class BleScanner {
 
     public BleScanner(Context context) {
         this.context = context;
-        final BluetoothManager bluetoothManager = (BluetoothManager) context.getSystemService(Context.BLUETOOTH_SERVICE);
+        final BluetoothManager bluetoothManager =
+                (BluetoothManager) context.getSystemService(Context.BLUETOOTH_SERVICE);
+        assert bluetoothManager != null;
         bluetooth_adapter = bluetoothManager.getAdapter();
 // check bluetooth is available and on
         if (bluetooth_adapter == null || !bluetooth_adapter.isEnabled()) {
@@ -67,8 +69,8 @@ public class BleScanner {
 //        SCAN FILTER(S)
 //            ScanFilter filter = new ScanFilter.Builder().setDeviceAddress("DC:A6:32:2B:C8:3D").build();
 //            filters.add(filter);
-//        ScanFilter filter2 = new ScanFilter.Builder().setDeviceName("TITO").build();
-//        filters.add(filter2);
+        ScanFilter filter2 = new ScanFilter.Builder().setDeviceName("LE-TITO").build();
+        filters.add(filter2);
         ScanSettings settings = new ScanSettings.Builder().setScanMode(ScanSettings.SCAN_MODE_LOW_LATENCY).build();
         setScanning(true);
         scanner.startScan(filters, settings, scan_callback);

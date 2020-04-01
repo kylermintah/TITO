@@ -39,7 +39,7 @@ public class ConnectActivity extends AppCompatActivity implements ScanResultsCon
     private Handler handler = new Handler();
     private ListAdapter ble_device_list_adapter;
     private BleScanner ble_scanner;
-    private static final long SCAN_TIMEOUT = 5000;
+    private static final long SCAN_TIMEOUT = 10000;
     private static final int REQUEST_LOCATION = 0;
     private static String[] PERMISSIONS_LOCATION = {Manifest.permission.ACCESS_COARSE_LOCATION};
     private boolean permissions_granted = false;
@@ -127,9 +127,9 @@ public class ConnectActivity extends AppCompatActivity implements ScanResultsCon
 
     private class ListAdapter extends BaseAdapter {
         private ArrayList<BluetoothDevice> ble_devices;
-        public ListAdapter() {
+        ListAdapter() {
             super();
-            ble_devices = new ArrayList<BluetoothDevice>();
+            ble_devices = new ArrayList<>();
         }
         public void addDevice(BluetoothDevice device) {
             if (!ble_devices.contains(device)) {
@@ -163,8 +163,8 @@ public class ConnectActivity extends AppCompatActivity implements ScanResultsCon
             if (view == null) {
                 view = ConnectActivity.this.getLayoutInflater().inflate(R.layout.list_row, null);
                 viewHolder = new ViewHolder();
-                viewHolder.text = (TextView) view.findViewById(R.id.textView);
-                viewHolder.bdaddr = (TextView) view.findViewById(R.id.bdaddr);
+                viewHolder.text = view.findViewById(R.id.textView);
+                viewHolder.bdaddr = view.findViewById(R.id.bdaddr);
                 view.setTag(viewHolder);
             } else {
                 viewHolder = (ViewHolder) view.getTag();
@@ -194,7 +194,7 @@ public class ConnectActivity extends AppCompatActivity implements ScanResultsCon
                     permissions_granted = true;
                 }
             } else {
-// the ACCESS_COARSE_LOCATION permission did not exist before M so....
+            // the ACCESS_COARSE_LOCATION permission did not exist before M so....
                 permissions_granted = true;
             }
             startScanning();
@@ -226,9 +226,9 @@ public class ConnectActivity extends AppCompatActivity implements ScanResultsCon
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (requestCode == REQUEST_LOCATION) {
             Log.i(Constants.TAG, "Received response for location permission request.");
-// Check if the only required permission has been granted
+            // Check if the only required permission has been granted
             if (grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-// Location permission has been granted
+            // Location permission has been granted
                 Log.i(Constants.TAG, "Location permission has now been granted. Scanning.....");
                 permissions_granted = true;
                 if (ble_scanner.isScanning()) {
