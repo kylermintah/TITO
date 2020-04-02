@@ -48,18 +48,14 @@ public class PeripheralControlActivity extends Activity {
     private TextView titoDeviceFound;
     private String device_name;
     private String device_address;
-    private Timer mTimer;
-    private boolean sound_alarm_on_disconnect = false;
-    private int alert_level;
     private boolean back_requested = false;
-    private boolean share_with_server = false;
-    private Switch share_switch;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_peripheral_control);
-        titoDeviceFound = ((TextView) this.findViewById(R.id.titoDeviceFound));
+        titoDeviceFound = this.findViewById(R.id.titoDeviceFound);
         hiValue = this.findViewById(R.id.hiValue);
         loValue = this.findViewById(R.id.loValue);
         updateButton = this.findViewById(R.id.updateButton);
@@ -80,23 +76,11 @@ public class PeripheralControlActivity extends Activity {
         seekBarHi.setEnabled(false);
         seekBarLo.setEnabled(false);
 
-
-
         int progress = seekBarHi.getProgress();
         hiValue.setText(progress+" hz");
         progress = seekBarLo.getProgress();
         loValue.setText(progress+" hz");
 
-        // disable the noise button
-        // disable the LOW/MID/HIGH alert level selection buttons
-//        share_switch.setEnabled(false);
-//        share_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            public void onCheckedChanged(CompoundButton buttonView,
-//                                         boolean isChecked) {
-//// we'll complete this later
-//            }
-//        });
-// connect to the Bluetooth adapter service
         Intent gattServiceIntent = new Intent(this, BleAdapterService.class);
         bindService(gattServiceIntent, service_connection, BIND_AUTO_CREATE);
         showMsg("READY");
