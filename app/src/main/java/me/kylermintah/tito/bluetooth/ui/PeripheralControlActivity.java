@@ -259,7 +259,7 @@ public class PeripheralControlActivity extends Activity {
     };
 
     public void onUpdate(View view) {
-
+        Toast.makeText(bluetooth_le_adapter, "Updated Cutoffs!", Toast.LENGTH_SHORT).show();
         int hi = Integer.parseInt(hiValue.getText().toString().replaceAll("[\\D]", "").trim());
         int lo = Integer.parseInt(loValue.getText().toString().replaceAll("[\\D]", "").trim());
 

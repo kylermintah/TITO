@@ -29,7 +29,7 @@
         android:layout_below="@id/titoDeviceFound"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="45dp"
-        android:src="@drawable/tito" />
+        android:src="@drawable/tito_image" />
 
     <TextView
         android:id="@+id/heading2"
